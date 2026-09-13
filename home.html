@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DustDrop | Тут выигрывают!</title>
+    <link rel="stylesheet" href="style.css?v=20260913-assets" />
+    <link rel="stylesheet" href="menu-overrides.css?v=20260912" />
+    <link rel="stylesheet" href="navigation.css?v=20260913-no-profile-images-2" />
+    <link rel="icon" type="image/png" href="https://i.ibb.co/JWM5xQH4/sfqdv2jnrpabyo9gi3he-Photoroom-1.png" />
+  </head>
+  <body>
+    <div class="auth-modal" role="dialog" aria-modal="true" aria-label="Авторизация" aria-hidden="true">
+      <div class="auth-modal__backdrop" data-close-auth></div>
+      <div class="auth-modal__dialog" tabindex="-1">
+        <div class="auth-modal__card">
+          <div class="auth-modal__hero">
+            <div class="auth-modal__hero-overlay"></div>
+            <img class="auth-modal__logo" src="https://i.ibb.co/JWM5xQH4/sfqdv2jnrpabyo9gi3he-Photoroom-1.png" alt="" aria-hidden="true" />
+            <div class="auth-modal__copy">
+              <h2>Авторизация</h2>
+              <p>Получайте скины для Counter-Strike 2 на lootix-drop.xyz. Перед использованием ознакомьтесь с условиями и шансами выпадения.</p>
+            </div>
+          </div>
+
+          <div class="auth-modal__content">
+            <div class="auth-modal__checks">
+              <label class="auth-modal__check">
+                <button type="button" class="auth-modal__checkbox" aria-checked="false" role="checkbox"></button>
+                <span>Подтверждаю, что мне больше 18 лет</span>
+              </label>
+
+              <label class="auth-modal__check">
+                <button type="button" class="auth-modal__checkbox" aria-checked="false" role="checkbox"></button>
+                <span>Принимаю <a href="#">правила и условия</a> использования сайта</span>
+              </label>
+            </div>
+
+            <div class="auth-modal__actions">
+              <button type="button" class="auth-modal__submit" disabled>
+                <span>Войти</span>
+              </button>
+              <button type="button" class="auth-modal__register" disabled>
+                <span>Зарегистрироваться</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button class="auth-modal__close" type="button" aria-label="Close modal">✕</button>
+      </div>
+    </div>
+
+    <div class="login-modal" role="dialog" aria-modal="true" aria-label="Вход" aria-hidden="true">
+      <div class="login-modal__backdrop" data-close-login></div>
+      <div class="login-modal__dialog" tabindex="-1">
+        <div class="login-modal__card">
+          <div class="login-modal__top">
+            <img class="login-modal__logo" src="https://i.ibb.co/JWM5xQH4/sfqdv2jnrpabyo9gi3he-Photoroom-1.png" alt="" aria-hidden="true" />
+            <h3>Вход</h3>
+          </div>
+
+          <form class="login-modal__form">
+            <label class="login-modal__field">
+              <span>Имя пользователя</span>
+              <input type="text" placeholder="Введите имя пользователя" />
+            </label>
+
+            <label class="login-modal__field">
+              <span>Пароль</span>
+              <input type="password" placeholder="Введите пароль" />
+            </label>
+
+            <div class="login-modal__error" aria-live="polite"></div>
+            <button type="submit" class="login-modal__submit">Войти</button>
+          </form>
+        </div>
+        <button class="login-modal__close" type="button" aria-label="Close login modal">✕</button>
+      </div>
+    </div>
+
+    <div class="register-modal" role="dialog" aria-modal="true" aria-label="Регистрация" aria-hidden="true">
+      <div class="register-modal__backdrop" data-close-register></div>
+      <div class="register-modal__dialog" tabindex="-1">
+        <div class="register-modal__card">
+          <div class="register-modal__top">
+            <img class="register-modal__logo" src="https://i.ibb.co/JWM5xQH4/sfqdv2jnrpabyo9gi3he-Photoroom-1.png" alt="" aria-hidden="true" />
+            <h3>Регистрация</h3>
+          </div>
+
+          <form class="register-modal__form">
+            <label class="register-modal__field">
+              <span>Имя пользователя</span>
+              <input type="text" placeholder="Введите имя пользователя" minlength="5" pattern="[A-Za-z]{5,}" title="Ник должен содержать минимум 5 латинских букв без цифр" required />
+            </label>
+
+            <label class="register-modal__field">
+              <span>Придумайте пароль</span>
+              <input type="password" placeholder="Придумайте пароль" minlength="6" required />
+            </label>
+
+            <label class="register-modal__field">
+              <span>Повторите пароль</span>
+              <input type="password" placeholder="Повторите пароль" minlength="6" required />
+            </label>
+
+            <div class="register-modal__error" aria-live="polite"></div>
+            <button type="submit" class="register-modal__submit">Создать аккаунт</button>
+          </form>
+        </div>
+        <button class="register-modal__close" type="button" aria-label="Close register modal">✕</button>
+      </div>
+    </div>
+
+    <div class="settings-modal" role="dialog" aria-modal="true" aria-label="Настройки" aria-hidden="true">
+      <div class="settings-modal__backdrop" data-close-settings></div>
+      <div class="settings-modal__dialog" tabindex="-1">
+        <div class="settings-modal__panel">
+          <div class="settings-modal__header">
+            <span>Настройки</span>
+          </div>
+
+          <div class="settings-modal__content">
+            <div class="settings-modal__group">
+              <label class="settings-modal__field">
+                <span>Никнейм</span>
+                <input type="text" value="ForcePay" placeholder="ForcePay" />
+              </label>
+
+              <label class="settings-avatar-upload">
+                <span>Загрузить аватар</span>
+                <input class="settings-modal__avatar-input" type="file" accept="image/*" />
+              </label>
+
+              <div class="settings-modal__field settings-modal__field--trade">
+                <span>Трейд-ссылка</span>
+                <div class="settings-modal__trade-wrap">
+                  <input type="url" inputmode="url" value="" placeholder="https://steamcommunity.com/tradeoffer/new/?partner=..." autocomplete="url" />
+                </div>
+                <a href="https://steamcommunity.com/id/me/tradeoffers/privacy#trade_offer_access_url" target="_blank" rel="noreferrer" class="settings-modal__link">Узнать свою ссылку</a>
+              </div>
+            </div>
+
+            <div class="settings-modal__streamer">
+              <div class="settings-modal__streamer-head">
+                <span>Режим стримера</span>
+                <button type="button" class="settings-modal__toggle" aria-label="Режим стримера" aria-pressed="false">
+                  <span></span>
+                </button>
+              </div>
+              <p>Скрывает личную информацию и баланс для безопасности во время стрима</p>
+            </div>
+          </div>
+
+          <button type="button" class="settings-modal__submit">СОХРАНИТЬ И ЗАКРЫТЬ</button>
+        </div>
+
+        <button class="settings-modal__close" type="button" aria-label="Close modal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.7a1 1 0 0 1 0 1.4L13.41 12l4.89 4.9a1 1 0 1 1-1.41 1.4L12 13.41l-4.9 4.89a1 1 0 1 1-1.4-1.41L10.59 12 5.7 7.1A1 1 0 1 1 7.1 5.7L12 10.59l4.9-4.89a1 1 0 0 1 1.4 0Z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="topup-modal" role="dialog" aria-modal="true" aria-label="Пополнение баланса" aria-hidden="true">
+      <div class="topup-modal__backdrop" data-close-topup></div>
+      <div class="topup-modal__dialog" tabindex="-1">
+        <div class="topup-modal__panel">
+          <div class="topup-modal__header">Пополнение баланса</div>
+          <p class="topup-modal__text">Чтобы пополнить баланс, перейдите в наш Telegram-канал. Там опубликована актуальная информация о способах пополнения и дальнейших действиях.</p>
+          <a class="topup-modal__link" href="https://t.me/dustdrop1" target="_blank" rel="noreferrer">Перейти в Telegram</a>
+        </div>
+        <button class="topup-modal__close" type="button" aria-label="Закрыть">✕</button>
+      </div>
+    </div>
+
+    <div class="profile-screen" aria-hidden="true">
+      <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute; width:0; height:0; overflow:hidden;">
+        <defs>
+          <linearGradient id="gradient-primary" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#7d5dff" />
+            <stop offset="50%" stop-color="#a587ff" />
+            <stop offset="100%" stop-color="#d9c2ff" />
+          </linearGradient>
+          <linearGradient id="gradient-grey" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#d6d8dc" />
+            <stop offset="50%" stop-color="#a9afb7" />
+            <stop offset="100%" stop-color="#7f8793" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <div class="profile-screen__shell">
+        <div class="profile-screen__header">
+          <div class="profile-screen__user">
+            <div class="profile-screen__avatar">П</div>
+            <div class="profile-screen__meta">
+              <div class="profile-screen__name">ForcePay</div>
+              <div class="profile-screen__id">ID:580843</div>
+            </div>
+          </div>
+
+          <div class="profile-screen__tools">
+            <button type="button" class="profile-screen__tool" aria-label="Настройки">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 17 17" width="20" height="20" color="currentColor" aria-hidden="true">
+                <path fill="inherit" d="M6.573 16.833a.4.4 0 0 1-.397-.35l-.258-2.079a.43.43 0 0 0-.25-.332 3 3 0 0 1-.287-.155 7 7 0 0 1-.282-.183.41.41 0 0 0-.393-.042l-1.933.816a.4.4 0 0 1-.502-.168L.343 10.991a.4.4 0 0 1 .104-.518l1.668-1.27a.45.45 0 0 0 .167-.375V8.17a.45.45 0 0 0-.167-.376L.447 6.525a.4.4 0 0 1-.104-.517L2.27 2.66a.4.4 0 0 1 .502-.17l1.932.817c.13.054.278.036.395-.042q.141-.095.29-.183a4 4 0 0 1 .287-.154.43.43 0 0 0 .24-.326l.26-2.086a.4.4 0 0 1 .396-.35h3.854a.4.4 0 0 1 .397.35l.259 2.079a.43.43 0 0 0 .25.332q.148.07.288.155.142.087.28.182c.117.08.265.097.395.043l1.932-.816a.4.4 0 0 1 .502.169l1.928 3.347a.4.4 0 0 1-.104.518l-1.669 1.27a.45.45 0 0 0-.166.375v.623c-.002.164.045.334.176.434l1.638 1.246a.4.4 0 0 1 .104.518l-1.927 3.346a.4.4 0 0 1-.504.169l-1.91-.814a.42.42 0 0 0-.396.042 6 6 0 0 1-.29.182 4 4 0 0 1-.287.154.43.43 0 0 0-.24.326l-.259 2.086a.4.4 0 0 1-.397.35zm1.969-5.416a2.8 2.8 0 0 0 2.052-.854q.85-.854.85-2.063t-.85-2.062a2.8 2.8 0 0 0-2.052-.855q-1.223 0-2.063.855-.84.853-.84 2.062.002 1.209.84 2.063.84.854 2.063.854"></path>
+              </svg>
+            </button>
+            <button type="button" class="profile-screen__tool profile-screen__logout" aria-label="Выйти">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" width="20" height="20" color="currentColor" aria-hidden="true">
+                <path fill="inherit" d="M11.684 1.667c.22 0 .4.179.4.4v1.58a.4.4 0 0 1-.4.4H4.151a.4.4 0 0 0-.4.4v11.105c0 .221.179.4.4.4h7.533c.22 0 .4.18.4.4v1.581a.4.4 0 0 1-.4.4H2.067a.4.4 0 0 1-.4-.4V2.067c0-.221.18-.4.4-.4zm2.483 5.631a.4.4 0 0 1 .66-.303l3.153 2.701a.4.4 0 0 1 0 .608l-3.152 2.701a.4.4 0 0 1-.66-.303V11.59a.4.4 0 0 0-.4-.4H6.233a.4.4 0 0 1-.4-.4V9.21c0-.221.18-.4.4-.4h7.533a.4.4 0 0 0 .4-.4z"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="profile-screen__actions">
+            <button type="button" class="profile-screen__topup profile-screen__action-button">Пополнить</button>
+            <button type="button" class="profile-screen__withdraw profile-screen__action-button">Вывести</button>
+          </div>
+        </div>
+
+        <div class="profile-screen__bg-card">
+          <div class="profile-screen__balance-row">
+            <div>
+              <div class="profile-screen__balance-caption">Баланс</div>
+              <div class="profile-screen__balance-value">0.00 ₽</div>
+            </div>
+            <button type="button" class="profile-screen__topup">Пополнить +</button>
+          </div>
+
+        </div>
+
+        <div class="profile-screen__cases-card">
+          <div class="profile-screen__cases-label">Открыто кейсов</div>
+          <div class="profile-screen__cases-value">0</div>
+        </div>
+
+        <div class="profile-screen__row">
+          <div class="profile-screen__line-label">Выведено</div>
+          <div class="profile-screen__line-value">0.00 ₽</div>
+        </div>
+
+        <div class="profile-screen__drop-card">
+          <div class="profile-screen__drop-title">Максимальный выигрыш</div>
+          <div class="profile-screen__drop-name">0 ₽</div>
+        </div>
+
+        <div class="profile-screen__items-header">
+          <div class="profile-screen__items-title">ПРЕДМЕТЫ</div>
+          <div class="profile-screen__items-actions">
+            <button type="button" class="profile-screen__sell-all">Продать всё</button>
+          </div>
+        </div>
+
+        <div class="profile-screen__inventory" id="profile-inventory" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="app-shell">
+      <div class="page-shell" id="site-top">
+        <header class="topbar">
+          <a class="brand" href="#site-top" aria-label="На главную">
+            <img src="https://i.ibb.co/JWM5xQH4/sfqdv2jnrpabyo9gi3he-Photoroom-1.png" alt="Логотип" class="brand__logo" />
+          </a>
+
+          <button class="profile-shortcut" type="button" aria-label="Войти или открыть профиль">
+            <span class="profile-shortcut__avatar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M13 2C10.2386 2 8 4.23858 8 7C8 7.55228 8.44772 8 9 8C9.55228 8 10 7.55228 10 7C10 5.34315 11.3431 4 13 4H17C18.6569 4 20 5.34315 20 7V17C20 18.6569 18.6569 20 17 20H13C11.3431 20 10 19.6569 10 17C10 16.4477 9.55228 16 9 16C8.44772 16 8 16.4477 8 17C8 19.7614 10.2386 22 13 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2H13Z" fill="currentColor"/>
+                <path d="M3 11C2.44772 11 2 11.4477 2 12C2 12.5523 2.44772 13 3 13H11.2821C11.1931 13.1098 11.1078 13.2163 11.0271 13.318C10.7816 13.6277 10.5738 13.8996 10.427 14.0945C10.3536 14.1921 10.2952 14.2705 10.255 14.3251L10.2084 14.3884L10.1959 14.4055L10.1915 14.4115C9.86687 14.8583 9.96541 15.4844 10.4122 15.809C10.859 16.1336 11.4843 16.0346 11.809 15.5879L11.8118 15.584L11.822 15.57L11.8638 15.5132C11.9007 15.4632 11.9553 15.3897 12.0247 15.2975C12.1637 15.113 12.3612 14.8546 12.5942 14.5606C13.0655 13.9663 13.6623 13.2519 14.2071 12.7071L14.9142 12L14.2071 11.2929C13.6623 10.7481 13.0655 10.0337 12.5942 9.43937C12.3612 9.14542 12.1637 8.88702 12.0247 8.7025C11.9553 8.61033 11.9007 8.53682 11.8638 8.48679L11.822 8.43002L11.8118 8.41602L11.8095 8.41281C11.4848 7.96606 10.859 7.86637 10.4122 8.19098C9.96541 8.51561 9.86636 9.14098 10.191 9.58778L11 9C10.191 9.58778 10.1909 9.58773 10.191 9.58778L10.1925 9.58985L10.1959 9.59454L10.2084 9.61162L10.255 9.67492C10.2952 9.72946 10.3536 9.80795 10.427 9.90549C10.5738 10.1004 10.7816 10.3723 11.0271 10.682C11.1078 10.7837 11.1931 10.8902 11.2821 11H3Z" fill="currentColor"/>
+              </svg>
+            </span>
+          </button>
+          <button class="menu-close" type="button" aria-label="Закрыть меню">✕</button>
+        </header>
+
+        <div class="menu-overlay" aria-hidden="true"></div>
+
+        <nav class="side-menu" aria-label="Главное меню">
+          <div class="menu-head">
+            <div class="menu-head__eyebrow">DustDrop / workspace</div>
+            <div class="menu-head__title">Открывай. Улучшай. Забирай.</div>
+            <p class="menu-head__copy">Все возможности аккаунта и коллекции в одном месте.</p>
+          </div>
+
+          <div class="menu-actions">
+            <div class="menu-auth-buttons">
+              <button class="menu-login" type="button">Войти</button>
+              <div class="menu-profile" hidden>
+                <div class="menu-profile__avatar">П</div>
+                <div class="menu-profile__meta">
+                  <div class="menu-profile__name">Никнейм</div>
+                  <div class="menu-profile__balance">На счете: 0.00 ₽</div>
+                  <button class="menu-profile__topup" type="button">Пополнить</button>
+                </div>
+                <button class="menu-profile__action" type="button" aria-label="Открыть профиль" title="Открыть профиль">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M19 7.24997H18.75V4.99997C18.7474 4.53665 18.5622 4.09305 18.2345 3.76543C17.9069 3.43781 17.4633 3.25259 17 3.24997C16.9207 3.23552 16.8393 3.23552 16.76 3.24997L4.86 7.24997H4.75H4.59L4.42 7.30997H4.28L4.12 7.39997L4 7.56997L3.86 7.68997L3.75 7.78997L3.63 7.93997C3.598 7.96867 3.57097 8.00246 3.55 8.03997C3.51288 8.09779 3.47948 8.15791 3.45 8.21997L3.39 8.32997C3.36216 8.40179 3.33878 8.47526 3.32 8.54997C3.3245 8.5865 3.3245 8.62344 3.32 8.65997C3.30967 8.77307 3.30967 8.88687 3.32 8.99997V19C3.3221 19.4515 3.49765 19.8849 3.81034 20.2106C4.12303 20.5364 4.54895 20.7295 5 20.75H19C19.4633 20.7473 19.9069 20.5621 20.2345 20.2345C20.5622 19.9069 20.7474 19.4633 20.75 19V8.99997C20.7474 8.53665 20.5622 8.09305 20.2345 7.76543C20.5622 7.43781 19.4633 7.25259 19 7.24997ZM17.08 4.75997C17.1293 4.77814 17.1719 4.81078 17.2022 4.85362C17.2325 4.89646 17.2492 4.94748 17.25 4.99997V7.24997H9.62L17.08 4.75997ZM19.25 19C19.25 19.0663 19.2237 19.1299 19.1768 19.1767C19.1299 19.2236 19.0663 19.25 19 19.25H5C4.9337 19.25 4.87011 19.2236 4.75 19V8.99997C4.75 8.93367 4.77634 8.87008 4.82322 8.82319C4.87011 8.77631 4.9337 8.74997 5 8.74997H19C19.0663 8.74997 19.1299 8.77631 19.1768 8.82319C19.2237 8.87008 19.25 8.93367 19.25 9.99997V19Z" fill="currentColor"/>
+                    <path d="M16.5 15.25C17.1904 15.25 17.75 14.6904 17.75 14C17.75 13.3096 17.1904 12.75 16.5 12.75C15.8096 12.75 15.25 13.3096 15.25 14C15.25 14.6904 15.8096 15.25 16.5 15.25Z" fill="currentColor"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-list">
+            <a href="#profile-inventory">ИНВЕНТАРЬ</a>
+            <a href="#site-top">КЕЙСЫ</a>
+            <a href="#upgrade-screen" class="accent">АПГРЕЙД</a>
+          </div>
+
+        </nav>
+      </div>
+
+      <nav class="bottom-nav" aria-label="Навигация сайта">
+        <div class="bottom-nav__online" aria-label="Сейчас на сайте" aria-live="polite">
+          <span class="bottom-nav__online-dot" aria-hidden="true"></span>
+          <strong class="menu-online__count">0</strong>
+        </div>
+        <a class="bottom-nav__link" href="#profile-inventory" aria-label="Инвентарь">
+          <svg class="bottom-nav__icon bottom-nav__icon--inventory" viewBox="0 0 18 18" aria-hidden="true"><path fill="currentColor" d="M5.25 3.75h12v3h-.75v.75H12a.75.75 0 0 0-.75.75V9a1.5 1.5 0 0 1-1.5 1.5H7.215a.76.76 0 0 0-.675.42l-1.838 3.668a.74.74 0 0 1-.667.412H1.5s-2.25 0 .75-4.5c0 0 2.25-3-.75-3V3.75h.75L2.625 3h2.25zM10.5 9v-.75a.75.75 0 0 0-.75-.75H9s-.75.75 0 1.5a1.5 1.5 0 0 1-1.5-1.5.75.75 0 0 0-.75.75V9a.75.75 0 0 0 .75.75h2.25A.75.75 0 0 0 10.5 9"></path></svg>
+          <span>Инвентарь</span>
+        </a>
+        <a class="bottom-nav__link is-active" href="#site-top" aria-label="Кейсы">
+          <svg class="bottom-nav__icon bottom-nav__icon--cases" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5777 4.43152 15.5777 3.38197C13.8221 2.46066 12.9443 2 12 2c-.9443 0-1.8221.46066-3.57771 1.38197L6.42229 4.43152C4.64855 5.36234 3.6059 5.9095 2.95969 6.64132L12 11.1615l9.0403-4.52018c-.6462-.73182-1.6893-1.27898-3.4626-2.2098Z"/><path d="M21.7484 7.96435 12.75 12.4635V21.904c.7179-.1785 1.5348-.6075 2.8277-1.286l2-1.0495c2.1517-1.1291 3.2278-1.6946 3.8249-2.7085C22 15.8458 22 14.5833 22 12.0585v-.117c0-1.893 0-3.0769-.2516-3.97715Z"/><path d="M11.25 21.904V12.4635L2.25164 7.96434C2 8.86557 2 10.0489 2 11.9415v.117c0 2.5248 0 3.7873.5974 4.802c.59739 1.0139 1.67346 1.5794 3.82489 2.7085l2 1.049c1.29285.6785 2.10971 1.1075 2.82771 1.286Z"/></svg>
+          <span>Кейсы</span>
+        </a>
+        <a class="bottom-nav__link bottom-nav__link--accent" href="#upgrade-screen" aria-label="Апгрейд">
+          <svg class="bottom-nav__icon bottom-nav__icon--upgrade" viewBox="0 0 44 44" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M21.793 22.126a.4.4 0 0 1 .414 0l12.172 7.373a.4.4 0 0 1 .192.342v5.643a.4.4 0 0 1-.584.356L22.185 29.71a.4.4 0 0 0-.37 0L10.013 35.84a.4.4 0 0 1-.584-.356v-5.643a.4.4 0 0 1 .192-.342zm-.008-15.703a.4.4 0 0 1 .43 0L39.1 17.168a.4.4 0 0 1 .184.337v8.536a.4.4 0 0 1-.59.35l-16.504-9a.4.4 0 0 0-.382 0l-16.503 9a.4.4 0 0 1-.592-.35v-8.536a.4.4 0 0 1 .185-.337z" clip-rule="evenodd"></path></svg>
+          <span>Апгрейд</span>
+        </a>
+      </nav>
+
+      <section class="live-section" aria-label="Живая лента открытий">
+        <div class="live-cards">
+          <article class="live-card">
+            <div class="card-image card-image--pink">
+              <img src="https://jabka.to/cdn/items/20537/large.webp" alt="Neon Rider" />
+            </div>
+            <div class="card-meta">
+              <strong>R8</strong>
+              <span>Neon Rider</span>
+            </div>
+          </article>
+
+          <article class="live-card">
+            <div class="card-image card-image--blue">
+              <img src="https://jabka.to/cdn/items/18866/large.webp" alt="Tec-9" />
+            </div>
+            <div class="card-meta">
+              <strong>Tec-9</strong>
+              <span>Fubar</span>
+            </div>
+          </article>
+
+          <article class="live-card">
+            <div class="card-image card-image--gold">
+              <img src="https://jabka.to/cdn/items/614/large.webp" alt="FAMAS Teardown" />
+            </div>
+            <div class="card-meta">
+              <strong>FAMAS</strong>
+              <span>Teardown</span>
+            </div>
+          </article>
+
+          <article class="live-card">
+            <div class="card-image card-image--green">
+              <img src="https://jabka.to/cdn/items/18593/large.webp" alt="M4A1-S Nitro" />
+            </div>
+            <div class="card-meta">
+              <strong>M4A1-S</strong>
+              <span>Nitro</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="cases-section" aria-label="Раздел кейсов">
+        <div class="cases-row"></div>
+      </section>
+    </div>
+
+    <div class="upgrade-screen" id="upgrade-screen" aria-hidden="true" hidden>
+      <div class="upgrader" id="upgrader">
+        <div class="wheel-area">
+          <div class="ambient"></div>
+          <div class="drum">
+            <svg class="win-svg" viewBox="0 0 470 470" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <defs>
+                <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#d19aff" />
+                  <stop offset="45%" stop-color="#a65cff" />
+                  <stop offset="100%" stop-color="#702bd8" />
+                </linearGradient>
+                <filter id="purpleGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="5" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <circle class="win-arc" cx="235" cy="235" r="220" pathLength="100" stroke-dasharray="40 60" transform="rotate(-90 235 235)" />
+              <circle class="win-arc-inner" cx="235" cy="235" r="220" pathLength="100" stroke-dasharray="40 60" transform="rotate(-90 235 235)" />
+            </svg>
+
+            <div class="ticks"></div>
+            <div class="center">
+              <div class="center-label">ШАНС ПОБЕДЫ</div>
+              <div class="chance" id="chance">40%</div>
+              <div class="center-sub">UPGRADE</div>
+            </div>
+          </div>
+
+          <div class="arrow-orbit" id="arrowOrbit">
+            <div class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 44 44" width="20" height="20" aria-hidden="true" focusable="false">
+                <path fill="currentColor" fill-rule="evenodd" d="M21.793 22.126a.4.4 0 0 1 .414 0l12.172 7.373a.4.4 0 0 1 .192.342v5.643a.4.4 0 0 1-.584.356L22.185 29.71a.4.4 0 0 0-.37 0L10.013 35.84a.4.4 0 0 1-.584-.356v-5.643a.4.4 0 0 1 .192-.342zm-.008-15.703a.4.4 0 0 1 .43 0L39.1 17.168a.4.4 0 0 1 .184.337v8.536a.4.4 0 0 1-.59.35l-16.504-9a.4.4 0 0 0-.382 0l-16.503 9a.4.4 0 0 1-.592-.35v-8.536a.4.4 0 0 1 .185-.337z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+          </div>
+
+          <button class="upgrade-speed-toggle" id="upgradeSpeedToggle" type="button" aria-label="Ускорить анимацию" aria-pressed="false" title="Ускорить анимацию">
+            <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+              <path class="upgrade-speed-toggle__flash" d="M27.59 16.53c.09.78-.22 1.54-.83 2.03l-6.24 4.98L16 27.28l-2.66 2.2c-.43.35-.93.52-1.44.52-.48 0-.96-.16-1.37-.48-.85-.66-1.12-1.75-.67-2.73l2.81-6.02c.04-.08.03-.15.01-.19-.01-.05-.05-.11-.13-.14l-6.86-3.2c-.71-.33-1.19-.99-1.28-1.77-.09-.78.22-1.54.83-2.03l6.24-4.98L16 4.72l2.66-2.2c.83-.68 1.96-.7 2.81-.04s1.12 1.75.67 2.73l-2.81 6.02c-.04.08-.03.15-.01.19.01.05.05.11.13.14l6.86 3.2c.71.33 1.19.99 1.28 1.77Z" />
+              <path class="upgrade-speed-toggle__shade" d="M27.59 16.53c.09.78-.22 1.54-.83 2.03l-6.24 4.98L16 27.28V4.72l2.66-2.2c.83-.68 1.96-.7 2.81-.04s1.12 1.75.67 2.73l-2.81 6.02c-.04.08-.03.15-.01.19.01.05.05.11.13.14l6.86 3.2c.71.33 1.19.99 1.28 1.77Z" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="upgrade-panel" aria-label="Панель улучшения">
+          <button class="upgrade-button" id="upgradeButton" type="button" disabled>АПГРЕЙД</button>
+
+          <div class="upgrade-panel__multipliers" aria-label="Множители удачи">
+            <button type="button" class="upgrade-panel__multiplier" data-chance="50">x2</button>
+            <button type="button" class="upgrade-panel__multiplier" data-chance="20">x5</button>
+            <button type="button" class="upgrade-panel__multiplier" data-chance="10">x10</button>
+            <button type="button" class="upgrade-panel__multiplier" data-chance="30">30%</button>
+            <button type="button" class="upgrade-panel__multiplier active" data-chance="40">40%</button>
+            <button type="button" class="upgrade-panel__multiplier" data-chance="75">75%</button>
+          </div>
+
+          <div class="upgrade-panel__slots">
+            <div class="upgrade-panel__slot upgrade-panel__slot--selectable" id="upgradeSelectedItemSlot" tabindex="0" role="button" aria-label="Выбрать предмет для улучшения">Выберите предмет</div>
+            <div class="upgrade-panel__slot" id="upgradeRewardItemSlot" aria-label="Предмет за выигрыш">Выберите предмет</div>
+          </div>
+
+          <div class="upgrade-panel__slot-picker" id="upgradeInventoryPicker" hidden></div>
+          <div class="status" id="status" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <div class="result" id="result">
+        <div class="result-box">
+          <div class="result-title" id="resultTitle"></div>
+          <div class="result-value" id="resultValue"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-detail" aria-hidden="true">
+      <div class="case-detail__panel">
+        <div class="case-detail__scene">
+          <div class="case-roll" id="caseRoll">
+            <div class="case-roll__reel" id="caseReel" aria-hidden="true"></div>
+            <div class="case-roll__circle"></div>
+            <div class="case-roll__line"></div>
+          </div>
+
+          <img class="case-detail__icon" src="https://jabka.to/cdn/items/18866/large.webp" alt="Иконка кейса" />
+        </div>
+
+        <div class="case-detail__actions">
+          <button class="case-detail__open" type="button">Открыть за 1 337.90 ₽</button>
+          <button class="case-detail__sell" type="button" hidden>Продать за 1 337.90 ₽</button>
+        </div>
+
+        <div class="spinner__container">
+          <div class="spinner__content-wrapper">
+            <div class="spinner__content case-detail__items">
+              <div class="item spinner__item item_1 items-center max-md:h-[18.4rem] max-md:pb:4 max-md:pt-12 max-md:px-4 max-sm:rounded-[0.8rem] overflow-hidden pb-5 pt-12.5 px-5 rarity-4b69ff relative rounded-xl transform-3d transition-[box-shadow]">
+                <svg-icon name="/assets/images/cases/dialog/rare-rounded.svg" class="item__rarity absolute inset-x-0 top-0 mx-auto h-2 w-[14rem] max-md:h-1.5 max-md:w-[10rem] inline-icon" style="mask-image: url(&quot;/assets/images/cases/dialog/rare-rounded.svg&quot;);"></svg-icon>
+                <div class="item-image item-image_730 item__picture relative shrink-0"><img alt="" src="https://jabka.to/cdn/items/18866/large.webp" /></div>
+                <div class="item__subtitle text-base leading-8 font-normal text-white opacity-30 max-md:text-sm max-md:leading-6"> Tec-9 </div>
+                <div class="item__title text-whiite mt-0.5 w-full flex-none text-center text-xl leading-11 font-semibold max-md:text-base max-md:leading-6"> Fubar </div>
+                <div class="currency currency-icon-size-8 currency-text-lg currency_RUB item__price leading-8 max-md:font-medium max-md:mt-2 mt-5 opacity-0 scale-80 transition-[opacity,scale]"> 12.06 </div>
+                <svg-icon name="/assets/images/cases/dialog/rare-rounded.svg" class="item__rarity item__rarity_bottom absolute inset-x-0 top-auto bottom-0 mx-auto h-2 w-[14rem] -scale-y-100 opacity-20 max-md:h-1.5 max-md:w-[10rem] inline-icon" style="mask-image: url(&quot;/assets/images/cases/dialog/rare-rounded.svg&quot;);"></svg-icon>
+              </div>
+
+              <div class="item spinner__item item_1 items-center max-md:h-[18.4rem] max-md:pb:4 max-md:pt-12 max-md:px-4 max-sm:rounded-[0.8rem] overflow-hidden pb-5 pt-12.5 px-5 rarity-4b69ff relative rounded-xl transform-3d transition-[box-shadow]">
+                <svg-icon name="/assets/images/cases/dialog/rare-rounded.svg" class="item__rarity absolute inset-x-0 top-0 mx-auto h-2 w-[14rem] max-md:h-1.5 max-md:w-[10rem] inline-icon" style="mask-image: url(&quot;/assets/images/cases/dialog/rare-rounded.svg&quot;);"></svg-icon>
+                <div class="item-image item-image_730 item__picture relative shrink-0"><img alt="" src="https://jabka.to/cdn/items/20537/large.webp" /></div>
+                <div class="item__subtitle text-base leading-8 font-normal text-white opacity-30 max-md:text-sm max-md:leading-6"> R8 </div>
+                <div class="item__title text-whiite mt-0.5 w-full flex-none text-center text-xl leading-11 font-semibold max-md:text-base max-md:leading-6"> Neon Rider </div>
+                <div class="currency currency-icon-size-8 currency-text-lg currency_RUB item__price leading-8 max-md:font-medium max-md:mt-2 mt-5 opacity-0 scale-80 transition-[opacity,scale]"> 12.06 </div>
+                <svg-icon name="/assets/images/cases/dialog/rare-rounded.svg" class="item__rarity item__rarity_bottom absolute inset-x-0 top-auto bottom-0 mx-auto h-2 w-[14rem] -scale-y-100 opacity-20 max-md:h-1.5 max-md:w-[10rem] inline-icon" style="mask-image: url(&quot;/assets/images/cases/dialog/rare-rounded.svg&quot;);"></svg-icon>
+              </div>
+
+              <div class="item spinner__item item_1 items-center max-md:h-[18.4rem] max-md:pb:4 max-md:pt-12 max-md:px-4 max-sm:rounded-[0.8rem] overflow-hidden pb-5 pt-12.5 px-5 rarity-4b69ff relative rounded-xl transform-3d transition-[box-shadow]">
+                <svg-icon name="/assets/images/cases/dialog/rare-rounded.svg" class="item__rarity absolute inset-x-0 top-0 mx-auto h-2 w-[14rem] max-md:h-1.5 max-md:w-[10rem] inline-icon" style="mask-image: url(&quot;/assets/images/cases/dialog/rare-rounded.svg&quot;);"></svg-icon>
+                <div class="item-image item-image_730 item__picture relative shrink-0"><img alt="" src="https://jabka.to/cdn/items/18866/large.webp" /></div>
+                <div class="item__subtitle text-base leading-8 font-normal text-white opacity-30 max-md:text-sm max-md:leading-6"> Tec-9 </div>
+                <div class="item__title text-whiite mt-0.5 w-full flex-none text-center text-xl leading-11 font-semibold max-md:text-base max-md:leading-6"> Fubar </div>
+                <div class="currency currency-icon-size-8 currency-text-lg currency_RUB item__price leading-8 max-md:font-medium max-md:mt-2 mt-5 opacity-0 scale-80 transition-[opacity,scale]"> 12.06 </div>
+                <svg-icon name="/assets/images/cases/dialog/rare-rounded.svg" class="item__rarity item__rarity_bottom absolute inset-x-0 top-auto bottom-0 mx-auto h-2 w-[14rem] -scale-y-100 opacity-20 max-md:h-1.5 max-md:w-[10rem] inline-icon" style="mask-image: url(&quot;/assets/images/cases/dialog/rare-rounded.svg&quot;);"></svg-icon>
+              </div>
+
+              <div class="item spinner__item item_1 items-center max-md:h-[18.4rem] max-md:pb:4 max-md:pt-12 max-md:px-4 max-sm:rounded-[0.8rem] overflow-hidden pb-5 pt-12.5 px-5 rarity-4b69ff relative rounded-xl transform-3d transition-[box-shadow]">
+                <svg-icon name="/assets/images/cases/dialog/rare-rounded.svg" class="item__rarity absolute inset-x-0 top-0 mx-auto h-2 w-[14rem] max-md:h-1.5 max-md:w-[10rem] inline-icon" style="mask-image: url(&quot;/assets/images/cases/dialog/rare-rounded.svg&quot;);"></svg-icon>
+                <div class="item-image item-image_730 item__picture relative shrink-0"><img alt="" src="https://jabka.to/cdn/items/20537/large.webp" /></div>
+                <div class="item__subtitle text-base leading-8 font-normal text-white opacity-30 max-md:text-sm max-md:leading-6"> R8 </div>
+                <div class="item__title text-whiite mt-0.5 w-full flex-none text-center text-xl leading-11 font-semibold max-md:text-base max-md:leading-6"> Neon Rider </div>
+                <div class="currency currency-icon-size-8 currency-text-lg currency_RUB item__price leading-8 max-md:font-medium max-md:mt-2 mt-5 opacity-0 scale-80 transition-[opacity,scale]"> 12.06 </div>
+                <svg-icon name="/assets/images/cases/dialog/rare-rounded.svg" class="item__rarity item__rarity_bottom absolute inset-x-0 top-auto bottom-0 mx-auto h-2 w-[14rem] -scale-y-100 opacity-20 max-md:h-1.5 max-md:w-[10rem] inline-icon" style="mask-image: url(&quot;/assets/images/cases/dialog/rare-rounded.svg&quot;);"></svg-icon>
+              </div>
+
+              <div class="item spinner__item item_1 items-center max-md:h-[18.4rem] max-md:pb:4 max-md:pt-12 max-md:px-4 max-sm:rounded-[0.8rem] overflow-hidden pb-5 pt-12.5 px-5 rarity-4b69ff relative rounded-xl transform-3d transition-[box-shadow]">
+                <svg-icon name="/assets/images/cases/dialog/rare-rounded.svg" class="item__rarity absolute inset-x-0 top-0 mx-auto h-2 w-[14rem] max-md:h-1.5 max-md:w-[10rem] inline-icon" style="mask-image: url(&quot;/assets/images/cases/dialog/rare-rounded.svg&quot;);"></svg-icon>
+                <div class="item-image item-image_730 item__picture relative shrink-0"><img alt="" src="https://jabka.to/cdn/items/18866/large.webp" /></div>
+                <div class="item__subtitle text-base leading-8 font-normal text-white opacity-30 max-md:text-sm max-md:leading-6"> Tec-9 </div>
+                <div class="item__title text-whiite mt-0.5 w-full flex-none text-center text-xl leading-11 font-semibold max-md:text-base max-md:leading-6"> Fubar </div>
+                <div class="currency currency-icon-size-8 currency-text-lg currency_RUB item__price leading-8 max-md:font-medium max-md:mt-2 mt-5 opacity-0 scale-80 transition-[opacity,scale]"> 12.06 </div>
+                <svg-icon name="/assets/images/cases/dialog/rare-rounded.svg" class="item__rarity item__rarity_bottom absolute inset-x-0 top-auto bottom-0 mx-auto h-2 w-[14rem] -scale-y-100 opacity-20 max-md:h-1.5 max-md:w-[10rem] inline-icon" style="mask-image: url(&quot;/assets/images/cases/dialog/rare-rounded.svg&quot;);"></svg-icon>
+              </div>
+
+              <div class="item spinner__item item_1 items-center max-md:h-[18.4rem] max-md:pb:4 max-md:pt-12 max-md:px-4 max-sm:rounded-[0.8rem] overflow-hidden pb-5 pt-12.5 px-5 rarity-4b69ff relative rounded-xl transform-3d transition-[box-shadow]">
+                <svg-icon name="/assets/images/cases/dialog/rare-rounded.svg" class="item__rarity absolute inset-x-0 top-0 mx-auto h-2 w-[14rem] max-md:h-1.5 max-md:w-[10rem] inline-icon" style="mask-image: url(&quot;/assets/images/cases/dialog/rare-rounded.svg&quot;);"></svg-icon>
+                <div class="item-image item-image_730 item__picture relative shrink-0"><img alt="" src="https://jabka.to/cdn/items/20537/large.webp" /></div>
+                <div class="item__subtitle text-base leading-8 font-normal text-white opacity-30 max-md:text-sm max-md:leading-6"> R8 </div>
+                <div class="item__title text-whiite mt-0.5 w-full flex-none text-center text-xl leading-11 font-semibold max-md:text-base max-md:leading-6"> Neon Rider </div>
+                <div class="currency currency-icon-size-8 currency-text-lg currency_RUB item__price leading-8 max-md:font-medium max-md:mt-2 mt-5 opacity-0 scale-80 transition-[opacity,scale]"> 12.06 </div>
+                <svg-icon name="/assets/images/cases/dialog/rare-rounded.svg" class="item__rarity item__rarity_bottom absolute inset-x-0 top-auto bottom-0 mx-auto h-2 w-[14rem] -scale-y-100 opacity-20 max-md:h-1.5 max-md:w-[10rem] inline-icon" style="mask-image: url(&quot;/assets/images/cases/dialog/rare-rounded.svg&quot;);"></svg-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js?v=20260913-upgrade-selected-item-fix"></script>
+  </body>
+</html>
